@@ -1,0 +1,34 @@
+{
+  "name": "Fournisseur",
+  "fields": [
+    {
+      "fieldName": "libelle",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "demande",
+      "otherEntityRelationshipName": "fournisseurMagasin",
+      "relationshipName": "demande"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "demande",
+      "otherEntityRelationshipName": "fournisseurFinal",
+      "relationshipName": "demande"
+    }
+  ],
+  "changelogDate": "20201015132507",
+  "entityTableName": "fournisseur",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}
