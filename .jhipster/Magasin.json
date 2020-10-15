@@ -1,0 +1,42 @@
+{
+  "name": "Magasin",
+  "fields": [
+    {
+      "fieldName": "code",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "libelle",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "rtr",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "demande",
+      "otherEntityRelationshipName": "magasin",
+      "relationshipName": "demande"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "magasinUtilisateur",
+      "otherEntityRelationshipName": "magasin",
+      "relationshipName": "magasinUtilisateur"
+    }
+  ],
+  "changelogDate": "20201015133007",
+  "entityTableName": "magasin",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

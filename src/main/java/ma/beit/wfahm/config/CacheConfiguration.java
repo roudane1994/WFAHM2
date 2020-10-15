@@ -47,6 +47,18 @@ public class CacheConfiguration {
             createCache(cm, ma.beit.wfahm.domain.User.class.getName());
             createCache(cm, ma.beit.wfahm.domain.Authority.class.getName());
             createCache(cm, ma.beit.wfahm.domain.User.class.getName() + ".authorities");
+            createCache(cm, ma.beit.wfahm.domain.Fournisseur.class.getName());
+            createCache(cm, ma.beit.wfahm.domain.Fournisseur.class.getName() + ".demandes");
+            createCache(cm, ma.beit.wfahm.domain.Demande.class.getName());
+            createCache(cm, ma.beit.wfahm.domain.Demande.class.getName() + ".demandeInfos");
+            createCache(cm, ma.beit.wfahm.domain.Demande.class.getName() + ".pieceJoindres");
+            createCache(cm, ma.beit.wfahm.domain.DemandeInfo.class.getName());
+            createCache(cm, ma.beit.wfahm.domain.PieceJoindre.class.getName());
+            createCache(cm, ma.beit.wfahm.domain.MagasinUtilisateur.class.getName());
+            createCache(cm, ma.beit.wfahm.domain.Magasin.class.getName());
+            createCache(cm, ma.beit.wfahm.domain.Magasin.class.getName() + ".demandes");
+            createCache(cm, ma.beit.wfahm.domain.Magasin.class.getName() + ".magasinUtilisateurs");
+            createCache(cm, ma.beit.wfahm.domain.Objet.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }
