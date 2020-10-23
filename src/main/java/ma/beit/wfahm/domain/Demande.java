@@ -89,15 +89,11 @@ public class Demande implements Serializable {
 
     @ManyToOne
     @JsonIgnoreProperties(value = "demandes", allowSetters = true)
-    private Magasin demandes;
+    private DemandeInfo demandeInfos;
 
     @ManyToOne
     @JsonIgnoreProperties(value = "demandes", allowSetters = true)
-    private Fournisseur demandePourFournisseurMagasin;
-
-    @ManyToOne
-    @JsonIgnoreProperties(value = "demandes", allowSetters = true)
-    private Fournisseur demandePourFournisseurFinal;
+    private PieceJoindre pieceJoindres;
 
     @ManyToOne
     @JsonIgnoreProperties(value = "demandes", allowSetters = true)
@@ -404,43 +400,30 @@ public class Demande implements Serializable {
         this.pieceJoindres = pieceJoindres;
     }
 
-    public Magasin getDemandes() {
-        return demandes;
+    public DemandeInfo getDemandeInfos() {
+        return demandeInfos;
     }
 
-    public Demande demandes(Magasin magasin) {
-        this.demandes = magasin;
+    public Demande demandeInfos(DemandeInfo demandeInfo) {
+        this.demandeInfos = demandeInfo;
         return this;
     }
 
-    public void setDemandes(Magasin magasin) {
-        this.demandes = magasin;
+    public void setDemandeInfos(DemandeInfo demandeInfo) {
+        this.demandeInfos = demandeInfo;
     }
 
-    public Fournisseur getDemandePourFournisseurMagasin() {
-        return demandePourFournisseurMagasin;
+    public PieceJoindre getPieceJoindres() {
+        return pieceJoindres;
     }
 
-    public Demande demandePourFournisseurMagasin(Fournisseur fournisseur) {
-        this.demandePourFournisseurMagasin = fournisseur;
+    public Demande pieceJoindres(PieceJoindre pieceJoindre) {
+        this.pieceJoindres = pieceJoindre;
         return this;
     }
 
-    public void setDemandePourFournisseurMagasin(Fournisseur fournisseur) {
-        this.demandePourFournisseurMagasin = fournisseur;
-    }
-
-    public Fournisseur getDemandePourFournisseurFinal() {
-        return demandePourFournisseurFinal;
-    }
-
-    public Demande demandePourFournisseurFinal(Fournisseur fournisseur) {
-        this.demandePourFournisseurFinal = fournisseur;
-        return this;
-    }
-
-    public void setDemandePourFournisseurFinal(Fournisseur fournisseur) {
-        this.demandePourFournisseurFinal = fournisseur;
+    public void setPieceJoindres(PieceJoindre pieceJoindre) {
+        this.pieceJoindres = pieceJoindre;
     }
 
     public Magasin getMagasin() {

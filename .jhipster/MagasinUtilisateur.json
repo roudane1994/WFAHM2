@@ -15,13 +15,6 @@
       "relationshipType": "many-to-one",
       "otherEntityName": "magasin",
       "otherEntityRelationshipName": "magasinUtilisateur",
-      "relationshipName": "magasinUtilisateurs",
-      "otherEntityField": "id"
-    },
-    {
-      "relationshipType": "many-to-one",
-      "otherEntityName": "magasin",
-      "otherEntityRelationshipName": "magasinUtilisateur",
       "relationshipName": "magasin",
       "otherEntityField": "id"
     }

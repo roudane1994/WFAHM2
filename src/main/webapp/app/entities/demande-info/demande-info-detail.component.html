@@ -28,12 +28,6 @@
                 <dd>
                     <span>{{ demandeInfo.dateReponse }}</span>
                 </dd>
-                <dt><span jhiTranslate="wfahm2App.demandeInfo.demandeInfos">Demande Infos</span></dt>
-                <dd>
-                    <div *ngIf="demandeInfo.demandeInfos">
-                        <a [routerLink]="['/demande', demandeInfo.demandeInfos?.id, 'view']">{{ demandeInfo.demandeInfos?.id }}</a>
-                    </div>
-                </dd>
                 <dt><span jhiTranslate="wfahm2App.demandeInfo.demande">Demande</span></dt>
                 <dd>
                     <div *ngIf="demandeInfo.demande">

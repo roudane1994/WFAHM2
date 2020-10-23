@@ -19,13 +19,6 @@
       "relationshipType": "many-to-one",
       "otherEntityName": "demande",
       "otherEntityRelationshipName": "pieceJoindre",
-      "relationshipName": "pieceJoindres",
-      "otherEntityField": "id"
-    },
-    {
-      "relationshipType": "many-to-one",
-      "otherEntityName": "demande",
-      "otherEntityRelationshipName": "pieceJoindre",
       "relationshipName": "demande",
       "otherEntityField": "id"
     }

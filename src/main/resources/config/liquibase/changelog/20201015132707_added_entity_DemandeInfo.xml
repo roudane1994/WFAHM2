@@ -31,9 +31,6 @@
             <column name="date_reponse" type="date">
                 <constraints nullable="true" />
             </column>
-            <column name="demande_infos_id" type="bigint">
-                <constraints nullable="true" />
-            </column>
             <column name="demande_id" type="bigint">
                 <constraints nullable="true" />
             </column>

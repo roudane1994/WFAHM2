@@ -28,7 +28,6 @@
                     <th scope="col" ><span jhiTranslate="wfahm2App.demandeInfo.reponse">Reponse</span></th>
                     <th scope="col" ><span jhiTranslate="wfahm2App.demandeInfo.dateDemande">Date Demande</span></th>
                     <th scope="col" ><span jhiTranslate="wfahm2App.demandeInfo.dateReponse">Date Reponse</span></th>
-                    <th scope="col" ><span jhiTranslate="wfahm2App.demandeInfo.demandeInfos">Demande Infos</span></th>
                     <th scope="col" ><span jhiTranslate="wfahm2App.demandeInfo.demande">Demande</span></th>
                     <th scope="col"></th>
                 </tr>
@@ -41,11 +40,6 @@
                     <td>{{ demandeInfo.reponse }}</td>
                     <td>{{ demandeInfo.dateDemande | date:'mediumDate' }}</td>
                     <td>{{ demandeInfo.dateReponse | date:'mediumDate' }}</td>
-                    <td>
-                        <div *ngIf="demandeInfo.demandeInfos">
-                            <a [routerLink]="['/demande', demandeInfo.demandeInfos?.id, 'view']" >{{ demandeInfo.demandeInfos?.id }}</a>
-                        </div>
-                    </td>
                     <td>
                         <div *ngIf="demandeInfo.demande">
                             <a [routerLink]="['/demande', demandeInfo.demande?.id, 'view']" >{{ demandeInfo.demande?.id }}</a>

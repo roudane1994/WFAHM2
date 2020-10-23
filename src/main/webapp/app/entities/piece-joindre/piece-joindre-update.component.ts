@@ -23,7 +23,6 @@ export class PieceJoindreUpdateComponent implements OnInit {
     nordre: [],
     name: [],
     url: [],
-    pieceJoindres: [],
     demande: [],
   });
 
@@ -48,7 +47,6 @@ export class PieceJoindreUpdateComponent implements OnInit {
       nordre: pieceJoindre.nordre,
       name: pieceJoindre.name,
       url: pieceJoindre.url,
-      pieceJoindres: pieceJoindre.pieceJoindres,
       demande: pieceJoindre.demande,
     });
   }
@@ -74,7 +72,6 @@ export class PieceJoindreUpdateComponent implements OnInit {
       nordre: this.editForm.get(['nordre'])!.value,
       name: this.editForm.get(['name'])!.value,
       url: this.editForm.get(['url'])!.value,
-      pieceJoindres: this.editForm.get(['pieceJoindres'])!.value,
       demande: this.editForm.get(['demande'])!.value,
     };
   }

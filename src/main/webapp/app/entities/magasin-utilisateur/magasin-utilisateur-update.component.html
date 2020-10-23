@@ -24,14 +24,6 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="wfahm2App.magasinUtilisateur.magasinUtilisateurs" for="field_magasinUtilisateurs">Magasin Utilisateurs</label>
-                    <select class="form-control" id="field_magasinUtilisateurs" name="magasinUtilisateurs" formControlName="magasinUtilisateurs">
-                        <option [ngValue]="null"></option>
-                        <option [ngValue]="magasinOption.id === editForm.get('magasinUtilisateurs')!.value?.id ? editForm.get('magasinUtilisateurs')!.value : magasinOption" *ngFor="let magasinOption of magasins; trackBy: trackById">{{ magasinOption.id }}</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
                     <label class="form-control-label" jhiTranslate="wfahm2App.magasinUtilisateur.magasin" for="field_magasin">Magasin</label>
                     <select class="form-control" id="field_magasin" name="magasin" formControlName="magasin">
                         <option [ngValue]="null"></option>

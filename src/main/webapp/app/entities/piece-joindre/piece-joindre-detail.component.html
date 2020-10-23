@@ -20,12 +20,6 @@
                 <dd>
                     <span>{{ pieceJoindre.url }}</span>
                 </dd>
-                <dt><span jhiTranslate="wfahm2App.pieceJoindre.pieceJoindres">Piece Joindres</span></dt>
-                <dd>
-                    <div *ngIf="pieceJoindre.pieceJoindres">
-                        <a [routerLink]="['/demande', pieceJoindre.pieceJoindres?.id, 'view']">{{ pieceJoindre.pieceJoindres?.id }}</a>
-                    </div>
-                </dd>
                 <dt><span jhiTranslate="wfahm2App.pieceJoindre.demande">Demande</span></dt>
                 <dd>
                     <div *ngIf="pieceJoindre.demande">

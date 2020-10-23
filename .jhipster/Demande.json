@@ -89,23 +89,16 @@
     },
     {
       "relationshipType": "many-to-one",
-      "otherEntityName": "magasin",
+      "otherEntityName": "demandeInfo",
       "otherEntityRelationshipName": "demande",
-      "relationshipName": "demandes",
+      "relationshipName": "demandeInfos",
       "otherEntityField": "id"
     },
     {
       "relationshipType": "many-to-one",
-      "otherEntityName": "fournisseur",
+      "otherEntityName": "pieceJoindre",
       "otherEntityRelationshipName": "demande",
-      "relationshipName": "demandePourFournisseurMagasin",
-      "otherEntityField": "id"
-    },
-    {
-      "relationshipType": "many-to-one",
-      "otherEntityName": "fournisseur",
-      "otherEntityRelationshipName": "demande",
-      "relationshipName": "demandePourFournisseurFinal",
+      "relationshipName": "pieceJoindres",
       "otherEntityField": "id"
     },
     {
