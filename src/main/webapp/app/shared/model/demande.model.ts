@@ -26,9 +26,8 @@ export interface IDemande {
   prixNegocie?: number;
   demandeInfos?: IDemandeInfo[];
   pieceJoindres?: IPieceJoindre[];
-  demandes?: IMagasin;
-  demandePourFournisseurMagasin?: IFournisseur;
-  demandePourFournisseurFinal?: IFournisseur;
+  demandeInfos?: IDemandeInfo;
+  pieceJoindres?: IPieceJoindre;
   magasin?: IMagasin;
   fournisseurMagasin?: IFournisseur;
   fournisseurFinal?: IFournisseur;
@@ -57,9 +56,8 @@ export class Demande implements IDemande {
     public prixNegocie?: number,
     public demandeInfos?: IDemandeInfo[],
     public pieceJoindres?: IPieceJoindre[],
-    public demandes?: IMagasin,
-    public demandePourFournisseurMagasin?: IFournisseur,
-    public demandePourFournisseurFinal?: IFournisseur,
+    public demandeInfos?: IDemandeInfo,
+    public pieceJoindres?: IPieceJoindre,
     public magasin?: IMagasin,
     public fournisseurMagasin?: IFournisseur,
     public fournisseurFinal?: IFournisseur

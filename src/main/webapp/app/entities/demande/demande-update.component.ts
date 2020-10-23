@@ -7,12 +7,16 @@ import { Observable } from 'rxjs';
 
 import { IDemande, Demande } from 'app/shared/model/demande.model';
 import { DemandeService } from './demande.service';
+import { IDemandeInfo } from 'app/shared/model/demande-info.model';
+import { DemandeInfoService } from 'app/entities/demande-info/demande-info.service';
+import { IPieceJoindre } from 'app/shared/model/piece-joindre.model';
+import { PieceJoindreService } from 'app/entities/piece-joindre/piece-joindre.service';
 import { IMagasin } from 'app/shared/model/magasin.model';
 import { MagasinService } from 'app/entities/magasin/magasin.service';
 import { IFournisseur } from 'app/shared/model/fournisseur.model';
 import { FournisseurService } from 'app/entities/fournisseur/fournisseur.service';
 
-type SelectableEntity = IMagasin | IFournisseur;
+type SelectableEntity = IDemandeInfo | IPieceJoindre | IMagasin | IFournisseur;
 
 @Component({
   selector: 'jhi-demande-update',
@@ -20,6 +24,8 @@ type SelectableEntity = IMagasin | IFournisseur;
 })
 export class DemandeUpdateComponent implements OnInit {
   isSaving = false;
+  demandeinfos: IDemandeInfo[] = [];
+  piecejoindres: IPieceJoindre[] = [];
   magasins: IMagasin[] = [];
   fournisseurs: IFournisseur[] = [];
   dateBesionDp: any;
@@ -47,9 +53,8 @@ export class DemandeUpdateComponent implements OnInit {
     dateClouture: [],
     meilleurPrixMagasin: [],
     prixNegocie: [],
-    demandes: [],
-    demandePourFournisseurMagasin: [],
-    demandePourFournisseurFinal: [],
+    demandeInfos: [],
+    pieceJoindres: [],
     magasin: [],
     fournisseurMagasin: [],
     fournisseurFinal: [],
@@ -57,6 +62,8 @@ export class DemandeUpdateComponent implements OnInit {
 
   constructor(
     protected demandeService: DemandeService,
+    protected demandeInfoService: DemandeInfoService,
+    protected pieceJoindreService: PieceJoindreService,
     protected magasinService: MagasinService,
     protected fournisseurService: FournisseurService,
     protected activatedRoute: ActivatedRoute,
@@ -66,6 +73,10 @@ export class DemandeUpdateComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.data.subscribe(({ demande }) => {
       this.updateForm(demande);
+
+      this.demandeInfoService.query().subscribe((res: HttpResponse<IDemandeInfo[]>) => (this.demandeinfos = res.body || []));
+
+      this.pieceJoindreService.query().subscribe((res: HttpResponse<IPieceJoindre[]>) => (this.piecejoindres = res.body || []));
 
       this.magasinService.query().subscribe((res: HttpResponse<IMagasin[]>) => (this.magasins = res.body || []));
 
@@ -94,9 +105,8 @@ export class DemandeUpdateComponent implements OnInit {
       dateClouture: demande.dateClouture,
       meilleurPrixMagasin: demande.meilleurPrixMagasin,
       prixNegocie: demande.prixNegocie,
-      demandes: demande.demandes,
-      demandePourFournisseurMagasin: demande.demandePourFournisseurMagasin,
-      demandePourFournisseurFinal: demande.demandePourFournisseurFinal,
+      demandeInfos: demande.demandeInfos,
+      pieceJoindres: demande.pieceJoindres,
       magasin: demande.magasin,
       fournisseurMagasin: demande.fournisseurMagasin,
       fournisseurFinal: demande.fournisseurFinal,
@@ -139,9 +149,8 @@ export class DemandeUpdateComponent implements OnInit {
       dateClouture: this.editForm.get(['dateClouture'])!.value,
       meilleurPrixMagasin: this.editForm.get(['meilleurPrixMagasin'])!.value,
       prixNegocie: this.editForm.get(['prixNegocie'])!.value,
-      demandes: this.editForm.get(['demandes'])!.value,
-      demandePourFournisseurMagasin: this.editForm.get(['demandePourFournisseurMagasin'])!.value,
-      demandePourFournisseurFinal: this.editForm.get(['demandePourFournisseurFinal'])!.value,
+      demandeInfos: this.editForm.get(['demandeInfos'])!.value,
+      pieceJoindres: this.editForm.get(['pieceJoindres'])!.value,
       magasin: this.editForm.get(['magasin'])!.value,
       fournisseurMagasin: this.editForm.get(['fournisseurMagasin'])!.value,
       fournisseurFinal: this.editForm.get(['fournisseurFinal'])!.value,

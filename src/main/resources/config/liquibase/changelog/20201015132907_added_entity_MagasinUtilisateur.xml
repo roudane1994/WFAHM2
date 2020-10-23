@@ -22,9 +22,6 @@
             <column name="utilisateur" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
-            <column name="magasin_utilisateurs_id" type="bigint">
-                <constraints nullable="true" />
-            </column>
             <column name="magasin_id" type="bigint">
                 <constraints nullable="true" />
             </column>

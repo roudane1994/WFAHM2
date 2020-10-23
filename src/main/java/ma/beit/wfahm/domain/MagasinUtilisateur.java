@@ -30,10 +30,6 @@ public class MagasinUtilisateur implements Serializable {
 
     @ManyToOne
     @JsonIgnoreProperties(value = "magasinUtilisateurs", allowSetters = true)
-    private Magasin magasinUtilisateurs;
-
-    @ManyToOne
-    @JsonIgnoreProperties(value = "magasinUtilisateurs", allowSetters = true)
     private Magasin magasin;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
@@ -69,19 +65,6 @@ public class MagasinUtilisateur implements Serializable {
 
     public void setUtilisateur(String utilisateur) {
         this.utilisateur = utilisateur;
-    }
-
-    public Magasin getMagasinUtilisateurs() {
-        return magasinUtilisateurs;
-    }
-
-    public MagasinUtilisateur magasinUtilisateurs(Magasin magasin) {
-        this.magasinUtilisateurs = magasin;
-        return this;
-    }
-
-    public void setMagasinUtilisateurs(Magasin magasin) {
-        this.magasinUtilisateurs = magasin;
     }
 
     public Magasin getMagasin() {

@@ -1,5 +1,6 @@
 package ma.beit.wfahm.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
@@ -33,6 +34,14 @@ public class Fournisseur implements Serializable {
     @OneToMany(mappedBy = "fournisseurFinal")
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
     private Set<Demande> demandes = new HashSet<>();
+
+    @ManyToOne
+    @JsonIgnoreProperties(value = "fournisseurs", allowSetters = true)
+    private Demande demandePourFournisseurMagasin;
+
+    @ManyToOne
+    @JsonIgnoreProperties(value = "fournisseurs", allowSetters = true)
+    private Demande demandePourFournisseurFinal;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
     public Long getId() {
@@ -104,6 +113,32 @@ public class Fournisseur implements Serializable {
 
     public void setDemandes(Set<Demande> demandes) {
         this.demandes = demandes;
+    }
+
+    public Demande getDemandePourFournisseurMagasin() {
+        return demandePourFournisseurMagasin;
+    }
+
+    public Fournisseur demandePourFournisseurMagasin(Demande demande) {
+        this.demandePourFournisseurMagasin = demande;
+        return this;
+    }
+
+    public void setDemandePourFournisseurMagasin(Demande demande) {
+        this.demandePourFournisseurMagasin = demande;
+    }
+
+    public Demande getDemandePourFournisseurFinal() {
+        return demandePourFournisseurFinal;
+    }
+
+    public Fournisseur demandePourFournisseurFinal(Demande demande) {
+        this.demandePourFournisseurFinal = demande;
+        return this;
+    }
+
+    public void setDemandePourFournisseurFinal(Demande demande) {
+        this.demandePourFournisseurFinal = demande;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
 

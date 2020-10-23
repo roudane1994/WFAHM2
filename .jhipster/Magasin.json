@@ -26,6 +26,20 @@
       "otherEntityName": "magasinUtilisateur",
       "otherEntityRelationshipName": "magasin",
       "relationshipName": "magasinUtilisateur"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "magasinUtilisateur",
+      "otherEntityRelationshipName": "magasin",
+      "relationshipName": "magasinUtilisateurs",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "demande",
+      "otherEntityRelationshipName": "magasin",
+      "relationshipName": "demandes",
+      "otherEntityField": "id"
     }
   ],
   "changelogDate": "20201015133007",

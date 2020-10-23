@@ -8,7 +8,6 @@ export interface IDemandeInfo {
   reponse?: string;
   dateDemande?: Moment;
   dateReponse?: Moment;
-  demandeInfos?: IDemande;
   demande?: IDemande;
 }
 
@@ -20,7 +19,6 @@ export class DemandeInfo implements IDemandeInfo {
     public reponse?: string,
     public dateDemande?: Moment,
     public dateReponse?: Moment,
-    public demandeInfos?: IDemande,
     public demande?: IDemande
   ) {}
 }

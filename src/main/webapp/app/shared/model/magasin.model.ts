@@ -8,6 +8,8 @@ export interface IMagasin {
   rtr?: string;
   demandes?: IDemande[];
   magasinUtilisateurs?: IMagasinUtilisateur[];
+  magasinUtilisateurs?: IMagasinUtilisateur;
+  demandes?: IDemande;
 }
 
 export class Magasin implements IMagasin {
@@ -17,6 +19,8 @@ export class Magasin implements IMagasin {
     public libelle?: string,
     public rtr?: string,
     public demandes?: IDemande[],
-    public magasinUtilisateurs?: IMagasinUtilisateur[]
+    public magasinUtilisateurs?: IMagasinUtilisateur[],
+    public magasinUtilisateurs?: IMagasinUtilisateur,
+    public demandes?: IDemande
   ) {}
 }
