@@ -26,6 +26,8 @@
     <include file="config/liquibase/changelog/20201015132707_added_entity_constraints_DemandeInfo.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20201015132807_added_entity_constraints_PieceJoindre.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20201015132907_added_entity_constraints_MagasinUtilisateur.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201015132507_added_entity_constraints_Fournisseur.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201015133007_added_entity_constraints_Magasin.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
     <!-- jhipster-needle-liquibase-add-incremental-changelog - JHipster will add incremental liquibase changelogs here -->
 </databaseChangeLog>

@@ -8,23 +8,17 @@
     -->
     <changeSet id="20201015132607-2" author="jhipster">
         
-        <addForeignKeyConstraint baseColumnNames="demandes_id"
+        <addForeignKeyConstraint baseColumnNames="demande_infos_id"
                                  baseTableName="demande"
-                                 constraintName="fk_demande_demandes_id"
+                                 constraintName="fk_demande_demande_infos_id"
                                  referencedColumnNames="id"
-                                 referencedTableName="magasin"/>
+                                 referencedTableName="demande_info"/>
 
-        <addForeignKeyConstraint baseColumnNames="demande_pour_fournisseur_magasin_id"
+        <addForeignKeyConstraint baseColumnNames="piece_joindres_id"
                                  baseTableName="demande"
-                                 constraintName="fk_demande_demande_pour_fournisseur_magasin_id"
+                                 constraintName="fk_demande_piece_joindres_id"
                                  referencedColumnNames="id"
-                                 referencedTableName="fournisseur"/>
-
-        <addForeignKeyConstraint baseColumnNames="demande_pour_fournisseur_final_id"
-                                 baseTableName="demande"
-                                 constraintName="fk_demande_demande_pour_fournisseur_final_id"
-                                 referencedColumnNames="id"
-                                 referencedTableName="fournisseur"/>
+                                 referencedTableName="piece_joindre"/>
 
         <addForeignKeyConstraint baseColumnNames="magasin_id"
                                  baseTableName="demande"

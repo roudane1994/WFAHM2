@@ -26,7 +26,6 @@
                     <th scope="col" ><span jhiTranslate="wfahm2App.pieceJoindre.nordre">Nordre</span></th>
                     <th scope="col" ><span jhiTranslate="wfahm2App.pieceJoindre.name">Name</span></th>
                     <th scope="col" ><span jhiTranslate="wfahm2App.pieceJoindre.url">Url</span></th>
-                    <th scope="col" ><span jhiTranslate="wfahm2App.pieceJoindre.pieceJoindres">Piece Joindres</span></th>
                     <th scope="col" ><span jhiTranslate="wfahm2App.pieceJoindre.demande">Demande</span></th>
                     <th scope="col"></th>
                 </tr>
@@ -37,11 +36,6 @@
                     <td>{{ pieceJoindre.nordre }}</td>
                     <td>{{ pieceJoindre.name }}</td>
                     <td>{{ pieceJoindre.url }}</td>
-                    <td>
-                        <div *ngIf="pieceJoindre.pieceJoindres">
-                            <a [routerLink]="['/demande', pieceJoindre.pieceJoindres?.id, 'view']" >{{ pieceJoindre.pieceJoindres?.id }}</a>
-                        </div>
-                    </td>
                     <td>
                         <div *ngIf="pieceJoindre.demande">
                             <a [routerLink]="['/demande', pieceJoindre.demande?.id, 'view']" >{{ pieceJoindre.demande?.id }}</a>

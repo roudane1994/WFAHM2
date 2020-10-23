@@ -18,6 +18,20 @@
       "otherEntityName": "demande",
       "otherEntityRelationshipName": "fournisseurFinal",
       "relationshipName": "demande"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "demande",
+      "otherEntityRelationshipName": "fournisseur",
+      "relationshipName": "demandePourFournisseurMagasin",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "demande",
+      "otherEntityRelationshipName": "fournisseur",
+      "relationshipName": "demandePourFournisseurFinal",
+      "otherEntityField": "id"
     }
   ],
   "changelogDate": "20201015132507",

@@ -27,7 +27,6 @@ export class DemandeInfoUpdateComponent implements OnInit {
     reponse: [],
     dateDemande: [],
     dateReponse: [],
-    demandeInfos: [],
     demande: [],
   });
 
@@ -54,7 +53,6 @@ export class DemandeInfoUpdateComponent implements OnInit {
       reponse: demandeInfo.reponse,
       dateDemande: demandeInfo.dateDemande,
       dateReponse: demandeInfo.dateReponse,
-      demandeInfos: demandeInfo.demandeInfos,
       demande: demandeInfo.demande,
     });
   }
@@ -82,7 +80,6 @@ export class DemandeInfoUpdateComponent implements OnInit {
       reponse: this.editForm.get(['reponse'])!.value,
       dateDemande: this.editForm.get(['dateDemande'])!.value,
       dateReponse: this.editForm.get(['dateReponse'])!.value,
-      demandeInfos: this.editForm.get(['demandeInfos'])!.value,
       demande: this.editForm.get(['demande'])!.value,
     };
   }

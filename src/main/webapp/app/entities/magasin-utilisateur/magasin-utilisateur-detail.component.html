@@ -16,12 +16,6 @@
                 <dd>
                     <span>{{ magasinUtilisateur.utilisateur }}</span>
                 </dd>
-                <dt><span jhiTranslate="wfahm2App.magasinUtilisateur.magasinUtilisateurs">Magasin Utilisateurs</span></dt>
-                <dd>
-                    <div *ngIf="magasinUtilisateur.magasinUtilisateurs">
-                        <a [routerLink]="['/magasin', magasinUtilisateur.magasinUtilisateurs?.id, 'view']">{{ magasinUtilisateur.magasinUtilisateurs?.id }}</a>
-                    </div>
-                </dd>
                 <dt><span jhiTranslate="wfahm2App.magasinUtilisateur.magasin">Magasin</span></dt>
                 <dd>
                     <div *ngIf="magasinUtilisateur.magasin">

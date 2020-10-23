@@ -25,9 +25,6 @@
             <column name="url" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
-            <column name="piece_joindres_id" type="bigint">
-                <constraints nullable="true" />
-            </column>
             <column name="demande_id" type="bigint">
                 <constraints nullable="true" />
             </column>

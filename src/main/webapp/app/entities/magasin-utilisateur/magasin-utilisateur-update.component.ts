@@ -22,7 +22,6 @@ export class MagasinUtilisateurUpdateComponent implements OnInit {
     id: [],
     nordre: [],
     utilisateur: [],
-    magasinUtilisateurs: [],
     magasin: [],
   });
 
@@ -46,7 +45,6 @@ export class MagasinUtilisateurUpdateComponent implements OnInit {
       id: magasinUtilisateur.id,
       nordre: magasinUtilisateur.nordre,
       utilisateur: magasinUtilisateur.utilisateur,
-      magasinUtilisateurs: magasinUtilisateur.magasinUtilisateurs,
       magasin: magasinUtilisateur.magasin,
     });
   }
@@ -71,7 +69,6 @@ export class MagasinUtilisateurUpdateComponent implements OnInit {
       id: this.editForm.get(['id'])!.value,
       nordre: this.editForm.get(['nordre'])!.value,
       utilisateur: this.editForm.get(['utilisateur'])!.value,
-      magasinUtilisateurs: this.editForm.get(['magasinUtilisateurs'])!.value,
       magasin: this.editForm.get(['magasin'])!.value,
     };
   }

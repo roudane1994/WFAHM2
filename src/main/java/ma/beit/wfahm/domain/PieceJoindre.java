@@ -33,10 +33,6 @@ public class PieceJoindre implements Serializable {
 
     @ManyToOne
     @JsonIgnoreProperties(value = "pieceJoindres", allowSetters = true)
-    private Demande pieceJoindres;
-
-    @ManyToOne
-    @JsonIgnoreProperties(value = "pieceJoindres", allowSetters = true)
     private Demande demande;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
@@ -85,19 +81,6 @@ public class PieceJoindre implements Serializable {
 
     public void setUrl(String url) {
         this.url = url;
-    }
-
-    public Demande getPieceJoindres() {
-        return pieceJoindres;
-    }
-
-    public PieceJoindre pieceJoindres(Demande demande) {
-        this.pieceJoindres = demande;
-        return this;
-    }
-
-    public void setPieceJoindres(Demande demande) {
-        this.pieceJoindres = demande;
     }
 
     public Demande getDemande() {

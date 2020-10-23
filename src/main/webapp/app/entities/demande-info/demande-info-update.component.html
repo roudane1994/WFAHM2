@@ -50,14 +50,6 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="wfahm2App.demandeInfo.demandeInfos" for="field_demandeInfos">Demande Infos</label>
-                    <select class="form-control" id="field_demandeInfos" name="demandeInfos" formControlName="demandeInfos">
-                        <option [ngValue]="null"></option>
-                        <option [ngValue]="demandeOption.id === editForm.get('demandeInfos')!.value?.id ? editForm.get('demandeInfos')!.value : demandeOption" *ngFor="let demandeOption of demandes; trackBy: trackById">{{ demandeOption.id }}</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
                     <label class="form-control-label" jhiTranslate="wfahm2App.demandeInfo.demande" for="field_demande">Demande</label>
                     <select class="form-control" id="field_demande" name="demande" formControlName="demande">
                         <option [ngValue]="null"></option>

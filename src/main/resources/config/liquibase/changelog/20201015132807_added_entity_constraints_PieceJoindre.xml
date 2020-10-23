@@ -8,12 +8,6 @@
     -->
     <changeSet id="20201015132807-2" author="jhipster">
         
-        <addForeignKeyConstraint baseColumnNames="piece_joindres_id"
-                                 baseTableName="piece_joindre"
-                                 constraintName="fk_piece_joindre_piece_joindres_id"
-                                 referencedColumnNames="id"
-                                 referencedTableName="demande"/>
-
         <addForeignKeyConstraint baseColumnNames="demande_id"
                                  baseTableName="piece_joindre"
                                  constraintName="fk_piece_joindre_demande_id"

@@ -25,7 +25,6 @@
                     <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
                     <th scope="col" ><span jhiTranslate="wfahm2App.magasinUtilisateur.nordre">Nordre</span></th>
                     <th scope="col" ><span jhiTranslate="wfahm2App.magasinUtilisateur.utilisateur">Utilisateur</span></th>
-                    <th scope="col" ><span jhiTranslate="wfahm2App.magasinUtilisateur.magasinUtilisateurs">Magasin Utilisateurs</span></th>
                     <th scope="col" ><span jhiTranslate="wfahm2App.magasinUtilisateur.magasin">Magasin</span></th>
                     <th scope="col"></th>
                 </tr>
@@ -35,11 +34,6 @@
                     <td><a [routerLink]="['/magasin-utilisateur', magasinUtilisateur.id, 'view']">{{ magasinUtilisateur.id }}</a></td>
                     <td>{{ magasinUtilisateur.nordre }}</td>
                     <td>{{ magasinUtilisateur.utilisateur }}</td>
-                    <td>
-                        <div *ngIf="magasinUtilisateur.magasinUtilisateurs">
-                            <a [routerLink]="['/magasin', magasinUtilisateur.magasinUtilisateurs?.id, 'view']" >{{ magasinUtilisateur.magasinUtilisateurs?.id }}</a>
-                        </div>
-                    </td>
                     <td>
                         <div *ngIf="magasinUtilisateur.magasin">
                             <a [routerLink]="['/magasin', magasinUtilisateur.magasin?.id, 'view']" >{{ magasinUtilisateur.magasin?.id }}</a>

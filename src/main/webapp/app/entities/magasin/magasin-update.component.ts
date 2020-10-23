@@ -7,6 +7,12 @@ import { Observable } from 'rxjs';
 
 import { IMagasin, Magasin } from 'app/shared/model/magasin.model';
 import { MagasinService } from './magasin.service';
+import { IDemande } from 'app/shared/model/demande.model';
+import { DemandeService } from 'app/entities/demande/demande.service';
+import { IMagasinUtilisateur } from 'app/shared/model/magasin-utilisateur.model';
+import { MagasinUtilisateurService } from 'app/entities/magasin-utilisateur/magasin-utilisateur.service';
+
+type SelectableEntity = IMagasinUtilisateur | IDemande;
 
 @Component({
   selector: 'jhi-magasin-update',
@@ -14,19 +20,35 @@ import { MagasinService } from './magasin.service';
 })
 export class MagasinUpdateComponent implements OnInit {
   isSaving = false;
+  magasinutilisateurs: IMagasinUtilisateur[] = [];
+  demandes: IDemande[] = [];
 
   editForm = this.fb.group({
     id: [],
     code: [],
     libelle: [],
     rtr: [],
+    magasinUtilisateurs: [],
+    demandes: [],
   });
 
-  constructor(protected magasinService: MagasinService, protected activatedRoute: ActivatedRoute, private fb: FormBuilder) {}
+  constructor(
+    protected magasinService: MagasinService,
+    protected demandeService: DemandeService,
+    protected magasinUtilisateurService: MagasinUtilisateurService,
+    protected activatedRoute: ActivatedRoute,
+    private fb: FormBuilder
+  ) {}
 
   ngOnInit(): void {
     this.activatedRoute.data.subscribe(({ magasin }) => {
       this.updateForm(magasin);
+
+      this.magasinUtilisateurService
+        .query()
+        .subscribe((res: HttpResponse<IMagasinUtilisateur[]>) => (this.magasinutilisateurs = res.body || []));
+
+      this.demandeService.query().subscribe((res: HttpResponse<IDemande[]>) => (this.demandes = res.body || []));
     });
   }
 
@@ -36,6 +58,8 @@ export class MagasinUpdateComponent implements OnInit {
       code: magasin.code,
       libelle: magasin.libelle,
       rtr: magasin.rtr,
+      magasinUtilisateurs: magasin.magasinUtilisateurs,
+      demandes: magasin.demandes,
     });
   }
 
@@ -60,6 +84,8 @@ export class MagasinUpdateComponent implements OnInit {
       code: this.editForm.get(['code'])!.value,
       libelle: this.editForm.get(['libelle'])!.value,
       rtr: this.editForm.get(['rtr'])!.value,
+      magasinUtilisateurs: this.editForm.get(['magasinUtilisateurs'])!.value,
+      demandes: this.editForm.get(['demandes'])!.value,
     };
   }
 
@@ -77,5 +103,9 @@ export class MagasinUpdateComponent implements OnInit {
 
   protected onSaveError(): void {
     this.isSaving = false;
+  }
+
+  trackById(index: number, item: SelectableEntity): any {
+    return item.id;
   }
 }

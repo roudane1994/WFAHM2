@@ -40,10 +40,6 @@ public class DemandeInfo implements Serializable {
 
     @ManyToOne
     @JsonIgnoreProperties(value = "demandeInfos", allowSetters = true)
-    private Demande demandeInfos;
-
-    @ManyToOne
-    @JsonIgnoreProperties(value = "demandeInfos", allowSetters = true)
     private Demande demande;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
@@ -118,19 +114,6 @@ public class DemandeInfo implements Serializable {
 
     public void setDateReponse(LocalDate dateReponse) {
         this.dateReponse = dateReponse;
-    }
-
-    public Demande getDemandeInfos() {
-        return demandeInfos;
-    }
-
-    public DemandeInfo demandeInfos(Demande demande) {
-        this.demandeInfos = demande;
-        return this;
-    }
-
-    public void setDemandeInfos(Demande demande) {
-        this.demandeInfos = demande;
     }
 
     public Demande getDemande() {
